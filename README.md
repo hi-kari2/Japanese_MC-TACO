@@ -68,5 +68,5 @@ MC-TACOは英語による時間的常識データセットである．詳しく�
 　`mlm\_bert/`  
 cl-tohoku/bert-base-japanese-whole-word-masking を使用してファインチューニングしたモデルをhttps://drive.google.com/file/d/1mohWd1mSdWiDHU1IK1YUvcmgTlRjQ_TX/view?usp=sharing に保存している．
 
-# Questions
-何か質問がありましたら，g1820534@is.ocha.ac.jp までご連絡ください．
+# Contact
+何かありましたら，g1820534@is.ocha.ac.jp までご連絡ください．
