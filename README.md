@@ -1,6 +1,6 @@
 # Japanese_MC-TACO
 MC-TACOは英語による時間的常識データセットである．詳しくはhttps://github.com/CogComp/MCTACO を参照．  
-Japanese_MC-TACOはこれを日本語に翻訳したデータセットである．
+日本語MC-TACOはこれを日本語に翻訳したデータセットである．
 
 ## 環境構築
 インストールが必要なパッケージ
@@ -16,13 +16,13 @@ Japanese_MC-TACOはこれを日本語に翻訳したデータセットである�
 言語モデルとして cl-tohoku/bert-base-japanese-whole-word-masking を使用する場合を例に示す．
 
 1. データセットとコードをダウンロードする <br>
- `> git clone https://github.com/`
+ `> git clone https://github.com/hi-kari2/Japanese_MC-TACO.git`
  
 2. BERTの予測結果を生成する<br>
- `> sh experiments/bert/ja\_run\_bert\_baseline.sh`
+ `> sh experiments/bert/ja_run_bert_baseline.sh`
  
 3. 生成した予測結果を用いて評価を行なう <br>
- `> python evaluator/evaluator.py eval --test\_file dataset/test\_ja.tsv --prediction\_file bert\_output/eval\_outputs.txt`
+ `> python evaluator/evaluator.py eval --test_file dataset/test_ja.tsv --prediction_file bert_output/eval_outputs.txt`
 
 
 ## 結果
@@ -32,3 +32,38 @@ Japanese_MC-TACOはこれを日本語に翻訳したデータセットである�
  
 予測結果は以下のフォルダに書き出される．  
 　`bert\_output/`  
+
+
+# Masked Language Modeling
+日本語MC-TACOのラベルが yes である訓練データを用いたMLMでファインチューニングを行なう．
+
+## 環境構築
+上記と同様のパッケージのインストールが必要．
+
+## 使用手順
+言語モデルとして cl-tohoku/bert-base-japanese-whole-word-masking を使用する場合を例に示す．
+
+1. データセットとコードをダウンロードする <br>
+ `> git clone https://github.com/hi-kari2/Japanese_MC-TACO.git`
+ 
+2. MLMでファインチューニングを行ない，モデルを保存する <br>
+    `> sh experiments/bert/run_mlm.sh`
+    
+3. ファインチューニングしたBERTの予測結果を生成する<br>
+　experiments/bert/ja_run_bert_baseline.sh の15行目のコメントアウトを外し，追加してから実行すると，指定のモデルを読み込む．
+ `> sh experiments/bert/ja_run_bert_baseline.sh`
+ 
+4. 生成した予測結果を用いて評価を行なう <br>
+ `> python evaluator/evaluator.py eval --test_file dataset/test_ja.tsv --prediction_file bert_output/eval_outputs.txt`
+
+## 結果
+プログラムを実行した結果として以下が書き出される．<br>
+　`Strict Acc.: 0.3652335976928623`  
+　`Avg F1: 0.6585188086509655`
+
+予測結果は以下のフォルダに書き出される．<br>
+　`bert\_output/`
+
+ファインチューニングしたモデルは以下のフォルダに書き出される．<br>
+　`mlm\_bert/`  
+cl-tohoku/bert-base-japanese-whole-word-masking を使用してファインチューニングしたモデルをhttps://drive.google.com/file/d/1mohWd1mSdWiDHU1IK1YUvcmgTlRjQ\_TX/view?usp=sharing に保存している．
