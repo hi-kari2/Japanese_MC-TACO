@@ -31,7 +31,8 @@ MC-TACOは英語による時間的常識データセットである．詳しく�
 　`Avg F1: 0.6123554661179585`
  
 予測結果は以下のフォルダに書き出される．  
-　`bert\_output/`  
+　`bert\_output/`  <br>
+
 
 
 # Masked Language Modeling
