@@ -14,11 +14,11 @@ MC-TACOは英語による時間的常識データセットである．詳しく�
 ## 使用手順
 言語モデルとして cl-tohoku/bert-base-japanese-whole-word-masking を使用する場合を例に示す．
 
-1. データセットとコードをダウンロードする 
+1. データセットとコードをダウンロードする <br>
  '> git clone https://github.com/'
-2. BERTの予測結果を生成する
+2. BERTの予測結果を生成する<br>
  '> sh experiments/bert/ja\_run\_bert\_baseline.sh'
-3. 生成した予測結果を用いて評価を行なう 
+3. 生成した予測結果を用いて評価を行なう <br>
  '> python evaluator/evaluator.py eval --test\_file dataset/test\_ja.tsv --prediction\_file bert\_output/eval\_outputs.txt'
 
 
