@@ -63,10 +63,10 @@ MC-TACOは英語による時間的常識データセットである．詳しく�
 　`Avg F1: 0.6585188086509655`
 
 予測結果は以下のフォルダに書き出される．<br>
-　`bert\_output/`
+　`bert_output/`
 
 ファインチューニングしたモデルは以下のフォルダに書き出される．<br>
-　`mlm\_bert/`  
+　`mlm_bert/`  
 cl-tohoku/bert-base-japanese-whole-word-masking を使用してファインチューニングしたモデルをhttps://drive.google.com/file/d/1mohWd1mSdWiDHU1IK1YUvcmgTlRjQ_TX/view?usp=sharing に保存している．
 
 # Contact
