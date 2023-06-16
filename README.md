@@ -1,6 +1,7 @@
 # Japanese_MC-TACO
-MC-TACOは英語による時間的常識データセットである．詳しくはhttps://github.com/CogComp/MCTACO を参照．  
+MC-TACOは英語による時間的常識データセットで、詳しくはhttps://github.com/CogComp/MCTACO を参照．  
 日本語MC-TACOはこれを日本語に翻訳したデータセットである．
+このデータを使用した人はこの論文(https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_2B4GS604/_article/-char/ja/)を引用してください．
 
 ## 環境構築
 インストールが必要なパッケージ
